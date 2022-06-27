@@ -1,4 +1,7 @@
 name: concurrency-for-job-test-1
+concurrency:
+  group: ${{ github.repository }}-concurrency-for-job
+  cancel-in-progress: false
 
 on:
   push:
@@ -14,13 +17,4 @@ jobs:
     steps:
       - run: |
           sleep 100
-          echo "concurrency-for-job-test ${{github.job}}"
-  concurrency-3:
-    concurrency:
-      group: ${{ github.repository }}-concurrency-for-job
-      cancel-in-progress: false
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          sleep 2 
           echo "concurrency-for-job-test ${{github.job}}"
