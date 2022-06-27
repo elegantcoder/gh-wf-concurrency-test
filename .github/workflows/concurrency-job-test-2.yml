@@ -1,0 +1,16 @@
+name: concurrency-for-job-test-2
+concurrency: '${{ github.workflow }}'
+
+on:
+  push:
+    branches:
+      - playground/concurrency-for-job
+
+jobs:
+  concurrency-2:
+    concurrency: ${{ github.repository }}-concurrency-for-job
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          sleep 100
+          echo "concurrency-for-job-test ${{github.job}}"
