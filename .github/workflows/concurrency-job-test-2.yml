@@ -13,3 +13,10 @@ jobs:
       - run: |
           sleep 100
           echo "concurrency-for-job-test ${{github.job}}"
+  concurrency-4:
+    concurrency: ${{ github.repository }}-concurrency-for-job
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          sleep 2 
+          echo "concurrency-for-job-test ${{github.job}}"
