@@ -9,7 +9,7 @@ on:
       - playground/concurrency-for-job
 
 jobs:
-  concurrency-1:
+  concurrency-3:
     concurrency:
       group: ${{ github.repository }}-concurrency-for-job
       cancel-in-progress: false
