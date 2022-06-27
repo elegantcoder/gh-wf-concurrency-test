@@ -1,5 +1,4 @@
 name: concurrency-for-job-test-1
-concurrency: '${{ github.workflow }}'
 
 on:
   push:
