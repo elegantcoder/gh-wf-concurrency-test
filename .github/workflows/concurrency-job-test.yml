@@ -1,6 +1,6 @@
 name: concurrency-for-job-test-1
 concurrency:
-  group: ${{ github.repository }}-concurrency-for-job
+  group: ${{ github.repository }}-concurrency-for-workflow
   cancel-in-progress: false
 
 on:
